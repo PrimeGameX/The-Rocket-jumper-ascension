@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bqgcogcaekmh4"]
+
+[node name="hitbox" type="Area2D" unique_id=53097935]
+position = Vector2(1, 0)

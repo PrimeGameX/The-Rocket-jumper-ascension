@@ -1,34 +1,46 @@
 [gd_scene format=3 uid="uid://cew6jw45h72k7"]
 
 [ext_resource type="Script" uid="uid://ch7qkm1g0trls" path="res://scripts/character_body_2d.gd" id="1_ftp1a"]
-[ext_resource type="Texture2D" uid="uid://ba3u2enn8x7by" path="res://assets/sprites/teste_caminha.png" id="2_ftp1a"]
-[ext_resource type="Texture2D" uid="uid://bk8dd63ryhnl2" path="res://assets/sprites/teste_parado.png" id="3_k5uor"]
-[ext_resource type="Texture2D" uid="uid://ou5k3fr42r4a" path="res://assets/sprites/teste-pulo.png" id="4_es278"]
+[ext_resource type="Texture2D" uid="uid://8hhhm84g3wgn" path="res://assets/sprites/caminha.png" id="2_es278"]
+[ext_resource type="Texture2D" uid="uid://cyapyrcwt2jk2" path="res://assets/sprites/parado.png" id="3_k5uor"]
+[ext_resource type="Texture2D" uid="uid://c364haauqhlsf" path="res://assets/sprites/pulo.png" id="4_es278"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sov53"]
-size = Vector2(13, 26)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k5uor"]
-atlas = ExtResource("2_ftp1a")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_es278"]
-atlas = ExtResource("2_ftp1a")
-region = Rect2(32, 0, 32, 32)
+size = Vector2(13, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kafn3"]
-atlas = ExtResource("2_ftp1a")
-region = Rect2(0, 32, 32, 32)
+atlas = ExtResource("2_es278")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_thq74"]
-atlas = ExtResource("2_ftp1a")
-region = Rect2(32, 32, 32, 32)
+atlas = ExtResource("2_es278")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rm41a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j681p"]
+atlas = ExtResource("2_es278")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgooc"]
+atlas = ExtResource("2_es278")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y4xm"]
+atlas = ExtResource("2_es278")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdb0w"]
+atlas = ExtResource("2_es278")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnpju"]
+atlas = ExtResource("2_es278")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es278"]
 atlas = ExtResource("3_k5uor")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7gil4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm41a"]
 atlas = ExtResource("4_es278")
 region = Rect2(0, 0, 32, 32)
 
@@ -36,16 +48,25 @@ region = Rect2(0, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k5uor")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_es278")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_kafn3")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_thq74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j681p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgooc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y4xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdb0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnpju")
 }],
 "loop": true,
 "name": &"caminha",
@@ -53,7 +74,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rm41a")
+"texture": SubResource("AtlasTexture_es278")
 }],
 "loop": true,
 "name": &"parado",
@@ -61,7 +82,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7gil4")
+"texture": SubResource("AtlasTexture_rm41a")
 }],
 "loop": true,
 "name": &"pulo",
@@ -83,7 +104,7 @@ collision_mask = 2
 script = ExtResource("1_ftp1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=675075285]
-position = Vector2(-2.5, -1)
+position = Vector2(-2.5, 1)
 shape = SubResource("RectangleShape2D_sov53")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1675942636]
@@ -93,10 +114,9 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1881868405]
-position = Vector2(-1, 0)
+position = Vector2(-2, -3)
 sprite_frames = SubResource("SpriteFrames_rm41a")
 animation = &"pulo"
-autoplay = "parado"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1825409660]
 libraries/ = SubResource("AnimationLibrary_j681p")
