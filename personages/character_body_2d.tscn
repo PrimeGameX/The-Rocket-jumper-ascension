@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ch7qkm1g0trls" path="res://scripts/character_body_2d.gd" id="1_ftp1a"]
 [ext_resource type="Texture2D" uid="uid://8hhhm84g3wgn" path="res://assets/sprites/caminha.png" id="2_es278"]
+[ext_resource type="PackedScene" uid="uid://bv4rhgiodi1cc" path="res://rocket.tscn" id="2_kafn3"]
 [ext_resource type="Texture2D" uid="uid://cyapyrcwt2jk2" path="res://assets/sprites/parado.png" id="3_k5uor"]
 [ext_resource type="Texture2D" uid="uid://c364haauqhlsf" path="res://assets/sprites/pulo.png" id="4_es278"]
 
@@ -98,17 +99,17 @@ _data = {
 &"caminha": SubResource("Animation_7gil4")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1847750587]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1847750587 groups=["player"]]
 position = Vector2(3, -13)
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_ftp1a")
+rocket_scene = ExtResource("2_kafn3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=675075285]
 position = Vector2(-2.5, 1)
 shape = SubResource("RectangleShape2D_sov53")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1675942636]
-visible = false
 limit_left = 0
 position_smoothing_enabled = true
 editor_draw_limits = true
