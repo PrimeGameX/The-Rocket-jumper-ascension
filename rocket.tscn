@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bv4rhgiodi1cc"]
+
+[ext_resource type="Script" uid="uid://cia8yob6abls4" path="res://rocket.gd" id="1_fj03e"]
+[ext_resource type="Texture2D" uid="uid://baqp8c47dhn5e" path="res://assets/tiles/fundo.png" id="2_5gt1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gt1y"]
+size = Vector2(12, 8)
+
+[node name="Rocket" type="Area2D" unique_id=439480515]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_fj03e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1109405400]
+shape = SubResource("RectangleShape2D_5gt1y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1879656872]
+position = Vector2(5.364418e-07, 0)
+scale = Vector2(0.046875004, 0.03320312)
+texture = ExtResource("2_5gt1y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
