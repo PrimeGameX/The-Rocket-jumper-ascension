@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="the roket jumper-tcc"
-run/main_scene="uid://cohiasjvpqcup"
+run/main_scene="uid://twlf8rqlp8lw"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [display]
 
@@ -66,3 +70,5 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

@@ -12,10 +12,14 @@ const AIR_CONTROL = 0.4
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var arm_pivot: Node2D = $ArmPivot
 @onready var muzzle: Marker2D = $ArmPivot/Arm/Muzzle
-@onready var ui_label = $"../CanvasLayer/Label"
+@onready var ui_label = $"../CanvasLayer/HUD_Label"
+@onready var spawn_point = get_parent().get_node("Spawn") # ✅ NOVO
 
-var health := 100
+# ❤️ VIDA
+var max_life := 100
+var life := 100
 
+# 🚀 MUNIÇÃO
 var max_ammo := 4
 var ammo := max_ammo
 
@@ -23,12 +27,18 @@ var reload_time := 2.0
 var reload_timer := 0.0
 var reloading := false
 
+# ⏱️ COOLDOWN
 var shoot_cooldown := 0.3
 var shoot_timer := 0.0
 
 var max_velocity := 800.0
 
-func _physics_process(delta: float) -> void:
+
+func _ready():
+	add_to_group("player")
+
+
+func _physics_process(delta):
 
 	shoot_timer -= delta
 	
@@ -123,18 +133,44 @@ func start_reload():
 
 
 func take_damage(amount):
-	health -= amount
+	life -= amount
 	
-	if health <= 0:
+	if life <= 0:
 		die()
 	
 	update_ui()
 
 
+# ✅ NOVO SISTEMA DE MORTE
 func die():
-	queue_free()
+
+	life = max_life
+	global_position = spawn_point.global_position
+	velocity = Vector2.ZERO
+	reloading = false
+	
+	update_ui()
+
+
+func apply_pickup(type, value):
+
+	match type:
+
+		"vida":
+			life += value
+			life = min(life, max_life)
+
+		"max_vida":
+			max_life += value
+			life = max_life
+
+		"max_ammo":
+			max_ammo += value
+			ammo = max_ammo
+
+	update_ui()
 
 
 func update_ui():
 	if ui_label:
-		ui_label.text = "Vida: " + str(health) + "\nMunição: " + str(ammo)
+		ui_label.text = "Vida: " + str(life) + "/" + str(max_life) + "\nMunição: " + str(ammo)
