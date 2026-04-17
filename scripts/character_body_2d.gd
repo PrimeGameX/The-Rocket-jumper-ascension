@@ -144,10 +144,20 @@ func take_damage(amount):
 # ✅ NOVO SISTEMA DE MORTE
 func die():
 
+	# ❤️ vida
 	life = max_life
+	
+	# 📍 posição
 	global_position = spawn_point.global_position
+	
+	# 🛑 movimento
 	velocity = Vector2.ZERO
+	
+	# 🔫 RESET TOTAL DA ARMA (CORREÇÃO DO BUG)
 	reloading = false
+	reload_timer = 0.0
+	ammo = max_ammo
+	shoot_timer = 0.0
 	
 	update_ui()
 
