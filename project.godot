@@ -13,6 +13,8 @@ config_version=5
 config/name="the roket jumper-tcc"
 run/main_scene="uid://twlf8rqlp8lw"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [audio]

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bta52pf8l0r32" path="res://scripts/menu.gd" id="1_lti8b"]
 
+[sub_resource type="Theme" id="Theme_lti8b"]
+
 [node name="menu" type="Control" unique_id=2102498174]
 layout_mode = 3
 anchors_preset = 15
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_lti8b")
 script = ExtResource("1_lti8b")
 
 [node name="Label" type="Label" parent="." unique_id=7921699]
@@ -24,7 +27,7 @@ offset_right = 123.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "The Rocket Jump ascencion:v1.7"
+text = "The Rocket Jump ascencion:v1.7.3"
 
 [node name="Button" type="Button" parent="." unique_id=1183314450]
 layout_mode = 1
