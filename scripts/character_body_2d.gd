@@ -40,6 +40,8 @@ func _ready():
 
 func _physics_process(delta):
 
+
+
 	shoot_timer -= delta
 	
 	if reloading:
@@ -91,6 +93,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 	update_ui()
+
+
 
 
 func aim():
