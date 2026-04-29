@@ -1,47 +1,102 @@
 [gd_scene format=3 uid="uid://twlf8rqlp8lw"]
 
 [ext_resource type="Script" uid="uid://bta52pf8l0r32" path="res://scripts/menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://cwfrticyk2rwf" path="res://assets/backgrond/menu_backgrond.png" id="2_ouk20"]
 
 [sub_resource type="Theme" id="Theme_lti8b"]
+default_font_size = 0
 
-[node name="menu" type="Control" unique_id=2102498174]
-layout_mode = 3
+[sub_resource type="LabelSettings" id="LabelSettings_ouk20"]
+font_size = 30
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_lti8b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ouk20"]
+resource_name = "teste_menu"
+length = 3.0666666
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.099999905, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.50980395)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mae5d"]
+_data = {
+&"RESET": SubResource("Animation_lti8b"),
+&"teste_menu": SubResource("Animation_ouk20")
+}
+
+[node name="menu" type="TextureRect" unique_id=874291302]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 theme = SubResource("Theme_lti8b")
+texture = ExtResource("2_ouk20")
+expand_mode = 2
 script = ExtResource("1_lti8b")
 
-[node name="Label" type="Label" parent="." unique_id=7921699]
+[node name="MarginContainer" type="VBoxContainer" parent="." unique_id=1381934261]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -123.5
-offset_top = -11.5
-offset_right = 123.5
-offset_bottom = 11.5
+offset_left = -195.0
+offset_top = -103.5
+offset_right = 195.0
+offset_bottom = 103.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "The Rocket Jump ascencion:v1.7.3"
+theme_override_constants/separation = 50
 
-[node name="Button" type="Button" parent="." unique_id=1183314450]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.45200002
-anchor_top = 0.64000005
-anchor_right = 0.52500004
-anchor_bottom = 0.707
-offset_left = 0.4399414
-offset_top = 0.19998169
-offset_right = -6.1035156e-05
-offset_bottom = -0.040008545
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Label" type="Label" parent="MarginContainer" unique_id=7921699]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "The Rocket Jump ascencion:v1.7.3"
+label_settings = SubResource("LabelSettings_ouk20")
+
+[node name="play" type="Button" parent="MarginContainer" unique_id=1183314450]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
 text = "Play"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="opções" type="Button" parent="MarginContainer" unique_id=700765142]
+layout_mode = 2
+size_flags_vertical = 4
+text = "opções"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1943337243]
+libraries/ = SubResource("AnimationLibrary_mae5d")
+autoplay = &"teste_menu"
+
+[connection signal="pressed" from="MarginContainer/play" to="." method="_on_button_pressed"]

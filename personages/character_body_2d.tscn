@@ -1,41 +1,41 @@
 [gd_scene format=3 uid="uid://cew6jw45h72k7"]
 
 [ext_resource type="Script" uid="uid://ch7qkm1g0trls" path="res://scripts/character_body_2d.gd" id="1_ftp1a"]
-[ext_resource type="Texture2D" uid="uid://8hhhm84g3wgn" path="res://assets/sprites/caminha.png" id="2_es278"]
 [ext_resource type="PackedScene" uid="uid://bv4rhgiodi1cc" path="res://rocket.tscn" id="2_kafn3"]
 [ext_resource type="Texture2D" uid="uid://cyapyrcwt2jk2" path="res://assets/sprites/parado.png" id="3_k5uor"]
-[ext_resource type="Texture2D" uid="uid://ctmlndl6l7dhx" path="res://assets/sprites/braços_tenplate.png" id="3_thq74"]
+[ext_resource type="Texture2D" uid="uid://b584hs3js5588" path="res://assets/sprites/braços.png" id="3_thq74"]
 [ext_resource type="Texture2D" uid="uid://c364haauqhlsf" path="res://assets/sprites/pulo.png" id="4_es278"]
+[ext_resource type="Texture2D" uid="uid://bc34j7seh0t50" path="res://assets/sprites/jon-caminhaV2 (1).png" id="4_thq74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sov53"]
 size = Vector2(13, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kafn3"]
-atlas = ExtResource("2_es278")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gil4"]
+atlas = ExtResource("4_thq74")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_thq74"]
-atlas = ExtResource("2_es278")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j681p"]
+atlas = ExtResource("4_thq74")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j681p"]
-atlas = ExtResource("2_es278")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgooc"]
+atlas = ExtResource("4_thq74")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mgooc"]
-atlas = ExtResource("2_es278")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y4xm"]
+atlas = ExtResource("4_thq74")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7y4xm"]
-atlas = ExtResource("2_es278")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdb0w"]
+atlas = ExtResource("4_thq74")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vdb0w"]
-atlas = ExtResource("2_es278")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnpju"]
+atlas = ExtResource("4_thq74")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gnpju"]
-atlas = ExtResource("2_es278")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d7ln"]
+atlas = ExtResource("4_thq74")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_es278"]
@@ -50,10 +50,7 @@ region = Rect2(0, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kafn3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_thq74")
+"texture": SubResource("AtlasTexture_7gil4")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j681p")
@@ -69,6 +66,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gnpju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d7ln")
 }],
 "loop": true,
 "name": &"caminha",
@@ -120,17 +120,17 @@ editor_draw_limits = true
 position = Vector2(-3, -2)
 
 [node name="Arm" type="Sprite2D" parent="ArmPivot" unique_id=260563263]
-position = Vector2(2, -2)
+position = Vector2(1, -2)
 texture = ExtResource("3_thq74")
-offset = Vector2(4, 1)
+offset = Vector2(5, 1)
 
 [node name="Muzzle" type="Marker2D" parent="ArmPivot/Arm" unique_id=1801519302]
-position = Vector2(13, -3)
+position = Vector2(11, -3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1881868405]
-position = Vector2(-3, -3)
+position = Vector2(-4, -3)
 sprite_frames = SubResource("SpriteFrames_rm41a")
-animation = &"caminha"
+animation = &"parado"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1825409660]
 libraries/ = SubResource("AnimationLibrary_j681p")

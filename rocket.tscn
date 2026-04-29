@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bv4rhgiodi1cc"]
 
 [ext_resource type="Texture2D" uid="uid://cbbrtumkb5pr5" path="res://assets/sprites/rocket.png" id="2_5gt1y"]
-[ext_resource type="Texture2D" uid="uid://drw3xefs7hu8v" path="res://assets/sprites/explosao_teste.png" id="3_r2l15"]
+[ext_resource type="Texture2D" uid="uid://dmsxbd16kf61j" path="res://assets/sprites/explosao.png" id="2_r2l15"]
 
 [sub_resource type="GDScript" id="GDScript_5gt1y"]
 script/source = "extends Area2D
@@ -113,19 +113,23 @@ func apply_explosion_force():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gt1y"]
-size = Vector2(17, 2)
+size = Vector2(16, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpb7v"]
-atlas = ExtResource("3_r2l15")
+atlas = ExtResource("2_r2l15")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cum1y"]
-atlas = ExtResource("3_r2l15")
+atlas = ExtResource("2_r2l15")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_546ky"]
-atlas = ExtResource("3_r2l15")
+atlas = ExtResource("2_r2l15")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awr8v"]
+atlas = ExtResource("2_r2l15")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_awr8v"]
 animations = [{
@@ -138,10 +142,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_546ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awr8v")
 }],
 "loop": false,
 "name": &"explode",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [node name="Rocket" type="Area2D" unique_id=439480515]
@@ -150,7 +157,6 @@ collision_mask = 3
 script = SubResource("GDScript_5gt1y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1109405400]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_5gt1y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1879656872]
@@ -160,7 +166,7 @@ texture = ExtResource("2_5gt1y")
 
 [node name="ExplosionAnim" type="AnimatedSprite2D" parent="." unique_id=1243302702]
 visible = false
-scale = Vector2(2, 2)
+scale = Vector2(1.7, 1.7)
 sprite_frames = SubResource("SpriteFrames_awr8v")
 animation = &"explode"
 

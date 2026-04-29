@@ -1,3 +1,4 @@
+
 extends CharacterBody2D
 
 const SPEED = 300.0
@@ -6,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 const ACCELERATION = 1200.0
 const FRICTION = 1500.0
 const AIR_CONTROL = 0.4
-
+var use_life_system := false
 @export var rocket_scene: PackedScene
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
@@ -137,34 +138,30 @@ func start_reload():
 
 
 func take_damage(amount):
-	life -= amount
+
+	
+	
 	
 	if life <= 0:
 		die()
 	
 	update_ui()
 
-
 # ✅ NOVO SISTEMA DE MORTE
 func die():
 
-	# ❤️ vida
-	life = max_life
-	
-	# 📍 posição
+	if use_life_system:
+		life = max_life
+
 	global_position = spawn_point.global_position
-	
-	# 🛑 movimento
 	velocity = Vector2.ZERO
 	
-	# 🔫 RESET TOTAL DA ARMA (CORREÇÃO DO BUG)
 	reloading = false
 	reload_timer = 0.0
 	ammo = max_ammo
 	shoot_timer = 0.0
 	
 	update_ui()
-
 
 func apply_pickup(type, value):
 
@@ -187,4 +184,7 @@ func apply_pickup(type, value):
 
 func update_ui():
 	if ui_label:
-		ui_label.text = "Vida: " + str(life) + "/" + str(max_life) + "\nMunição: " + str(ammo)
+		if use_life_system:
+			ui_label.text = "Vida: " + str(life) + "/" + str(max_life) + "\nMunição: " + str(ammo)
+		else:
+			ui_label.text = "Munição: " + str(ammo)

@@ -90,6 +90,3 @@ func apply_explosion_force():
 		
 		player.velocity += impulse
 		
-		# 💥 dano baseado na distância (5 a 10)
-		var damage = lerp(5.0, 10.0, force)
-		player.take_damage(int(damage))
