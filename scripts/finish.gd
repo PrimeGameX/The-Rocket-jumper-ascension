@@ -14,3 +14,6 @@ func _on_body_entered(body):
 	await get_tree().process_frame
 	
 	get_tree().paused = true
+
+	if body.is_in_group("player"):
+		body.finish_level()

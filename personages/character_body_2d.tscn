@@ -113,6 +113,7 @@ shape = SubResource("RectangleShape2D_sov53")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1675942636]
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
+limit_right = 3350
 position_smoothing_enabled = true
 editor_draw_limits = true
 
@@ -130,7 +131,7 @@ position = Vector2(11, -3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1881868405]
 position = Vector2(-4, -3)
 sprite_frames = SubResource("SpriteFrames_rm41a")
-animation = &"parado"
+animation = &"caminha"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1825409660]
 libraries/ = SubResource("AnimationLibrary_j681p")

@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cu6wy72g6hbe6"]
+
+[ext_resource type="Theme" uid="uid://bnaffhsn4p04w" path="res://assets/themes/theme-menu.tres" id="1_ee15a"]
+[ext_resource type="Script" uid="uid://cwjtaysylkqfw" path="res://scripts/opções_menu.gd" id="1_vvk5l"]
+
+[node name="opções-menu" type="CanvasLayer" unique_id=2081844204]
+script = ExtResource("1_vvk5l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=949770773]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.046922766, 0.12043098, 0.164004, 1)
+
+[node name="a" type="VBoxContainer" parent="." unique_id=972639161]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -79.0
+offset_right = 55.0
+offset_bottom = 23.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="a" unique_id=197309385]
+layout_mode = 2
+size_flags_vertical = 8
+text = "musica
+"
+
+[node name="Label2" type="Label" parent="a" unique_id=167928585]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "som
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=964601958]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -81.0
+offset_right = 208.5
+offset_bottom = 139.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2023294517]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_ee15a")
+theme_override_font_sizes/font_size = 26
+text = "OPÇÕES"
+
+[node name="musica" type="HSlider" parent="VBoxContainer" unique_id=1385135651]
+layout_mode = 2
+min_value = -50.0
+max_value = 50.0
+
+[node name="som" type="HSlider" parent="VBoxContainer" unique_id=986568589]
+layout_mode = 2
+min_value = -50.0
+max_value = 50.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1664035323]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "voltar"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

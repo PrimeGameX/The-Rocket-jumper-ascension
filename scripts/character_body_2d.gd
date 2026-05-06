@@ -15,6 +15,11 @@ var use_life_system := false
 @onready var muzzle: Marker2D = $ArmPivot/Arm/Muzzle
 @onready var ui_label = $"../CanvasLayer/HUD_Label"
 @onready var spawn_point = get_parent().get_node("Spawn") # ✅ NOVO
+@onready var end_label = $"../CanvasLayer/Victory_Label"
+#tempo
+var level_time := 0.0
+var timing := true
+
 
 # ❤️ VIDA
 var max_life := 100
@@ -39,10 +44,13 @@ func _ready():
 	add_to_group("player")
 
 
-func _physics_process(delta):
 
 
 
+func _process(delta):
+	if timing:
+		level_time += delta
+		
 	shoot_timer -= delta
 	
 	if reloading:
@@ -95,9 +103,21 @@ func _physics_process(delta):
 
 	update_ui()
 
+func get_time_formatted():
+	var minutes = int(level_time) / 60
+	var seconds = int(level_time) % 60
+	var ms = int((level_time - int(level_time)) * 100)
+	
+	return "%02d:%02d:%02d" % [minutes, seconds, ms]
 
-
-
+func finish_level():
+	timing = false
+	
+	var tempo = get_time_formatted()
+	
+	
+	end_label.text = "Fase concluída!\nTempo: " + tempo
+	
 func aim():
 	var mouse_pos = get_global_mouse_position()
 	

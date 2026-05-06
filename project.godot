@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="the roket jumper-tcc"
+config/name="The Roket Jumper:Ascencion-tcc"
 run/main_scene="uid://twlf8rqlp8lw"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
