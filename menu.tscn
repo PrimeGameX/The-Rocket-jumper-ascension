@@ -52,6 +52,7 @@ _data = {
 }
 
 [node name="menu" type="TextureRect" unique_id=874291302]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

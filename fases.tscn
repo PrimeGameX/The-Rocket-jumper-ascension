@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cm64g0di30jev" path="res://assets/backgrond/fundo_dica.png" id="6_va436"]
 [ext_resource type="Theme" uid="uid://bnaffhsn4p04w" path="res://assets/themes/theme-menu.tres" id="7_jbn2y"]
 [ext_resource type="Texture2D" uid="uid://cgpt4fnfyhluf" path="res://assets/backgrond/fundo-2.png" id="7_va436"]
+[ext_resource type="Script" uid="uid://dxbisong6vjur" path="res://scripts/victory_label.gd" id="9_5e3ql"]
 [ext_resource type="Texture2D" uid="uid://ckv1rmmgdbcyn" path="res://assets/coletaveis/upgrade_rocket.png" id="9_a6v6t"]
 [ext_resource type="AudioStream" uid="uid://da6gyidlj2262" path="res://musicas/Juhani-Junkala-_Retro-Game-Music-Pack_-Level-1.ogg" id="10_a6v6t"]
 [ext_resource type="Script" uid="uid://cnmdd71cqjxmp" path="res://scripts/finish.gd" id="10_u0img"]
@@ -420,28 +421,6 @@ _data = {
 metadata/_edit_vertical_guides_ = [-46.0]
 metadata/_edit_horizontal_guides_ = [-1210.0]
 
-[node name="ParallaxBackground" type="Node2D" parent="." unique_id=410579933]
-position = Vector2(4, 770)
-
-[node name="Parallax2D-fundo" type="Parallax2D" parent="ParallaxBackground" unique_id=1564892360]
-scroll_scale = Vector2(0.7, 0.7)
-scroll_offset = Vector2(-270, -144)
-repeat_size = Vector2(320, 180)
-repeat_times = 3
-limit_begin = Vector2(0, -10000000)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D-fundo" unique_id=899017810]
-scale = Vector2(5, 5)
-
-[node name="Parallax2D-canos" type="Parallax2D" parent="ParallaxBackground" unique_id=897015037]
-scroll_offset = Vector2(-277, 61)
-repeat_size = Vector2(640, 0)
-repeat_times = 3
-limit_begin = Vector2(0, -10000000)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D-canos" unique_id=1267309980]
-scale = Vector2(4, 4)
-
 [node name="fundo" type="TileMapLayer" parent="." unique_id=1074628301]
 visibility_layer = 3
 use_parent_material = true
@@ -472,7 +451,6 @@ Munição: 4"
 
 [node name="Victory_Label" type="Label" parent="CanvasLayer" unique_id=358829211]
 process_mode = 3
-visible = false
 anchors_preset = -1
 anchor_left = 0.45100003
 anchor_top = 0.48400003
@@ -487,6 +465,21 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("7_jbn2y")
 text = "FASE COMPLETA"
+script = ExtResource("9_5e3ql")
+
+[node name="voltar" type="Button" parent="CanvasLayer/Victory_Label" unique_id=374466844]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095000006
+anchor_top = 0.5
+anchor_right = 0.77000004
+anchor_bottom = 2.1520002
+offset_left = 0.02999878
+offset_top = 7.0
+offset_right = -0.020004272
+offset_bottom = 9.003994
+text = "voltar"
 
 [node name="Pickup_max_munição" parent="." unique_id=1150273275 instance=ExtResource("6_r1fy5")]
 position = Vector2(1133, 294)
@@ -522,4 +515,5 @@ shape = SubResource("RectangleShape2D_a6v6t")
 libraries/ = SubResource("AnimationLibrary_jbn2y")
 autoplay = &"inicio"
 
+[connection signal="pressed" from="CanvasLayer/Victory_Label/voltar" to="CanvasLayer/Victory_Label" method="_on_voltar_pressed"]
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bwpfq6w03qat5"]
+
+[ext_resource type="Texture2D" uid="uid://quxp7kv0rwvi" path="res://assets/backgrond/fundo_backgrond1.png" id="1_xlg7u"]
+
+[node name="Control" type="Control" unique_id=448649944]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fundo" type="TextureRect" parent="." unique_id=805964184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xlg7u")
+
+[node name="vBoxContainer" type="VBoxContainer" parent="." unique_id=1829211946]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 292.0
+offset_right = 822.0
+offset_bottom = 714.0
+
+[node name="faze-1" type="Button" parent="vBoxContainer" unique_id=959242280]
+layout_mode = 2
+text = "faze-1"
+
+[node name="faze-2" type="Button" parent="vBoxContainer" unique_id=913458292]
+layout_mode = 2
+text = "faze-2"
+
+[node name="faze-3" type="Button" parent="vBoxContainer" unique_id=1396626886]
+layout_mode = 2
+text = "faze-3"
+
+[node name="faze-4" type="Button" parent="vBoxContainer" unique_id=433102627]
+layout_mode = 2
+text = "faze-4"
+
+[node name="voltar" type="Button" parent="." unique_id=1606631199]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.135
+anchor_bottom = 0.171
+offset_left = 4.0
+offset_top = 29.0
+offset_right = -1.800003
+offset_bottom = -40.120003
+text = "voltar
+"
