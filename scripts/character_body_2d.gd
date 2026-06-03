@@ -205,6 +205,6 @@ func apply_pickup(type, value):
 func update_ui():
 	if ui_label:
 		if use_life_system:
-			ui_label.text = "Vida: " + str(life) + "/" + str(max_life) + "\nMunição: " + str(ammo)
+			ui_label.text = "Vida: " + str(life) + "/" + str(max_life) + "\nx" + str(ammo)
 		else:
-			ui_label.text = "Munição: " + str(ammo)
+			ui_label.text = "x" + str(ammo)

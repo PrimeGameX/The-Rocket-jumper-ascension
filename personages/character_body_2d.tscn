@@ -101,7 +101,6 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1847750587 groups=["player"]]
-position = Vector2(3, -13)
 collision_mask = 3
 script = ExtResource("1_ftp1a")
 rocket_scene = ExtResource("2_kafn3")
@@ -112,9 +111,9 @@ shape = SubResource("RectangleShape2D_sov53")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1675942636]
 zoom = Vector2(1.5, 1.5)
+process_callback = 0
 limit_left = 0
 limit_right = 3350
-limit_smoothed = true
 position_smoothing_enabled = true
 editor_draw_limits = true
 
