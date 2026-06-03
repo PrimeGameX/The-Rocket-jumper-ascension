@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://dae48ejqb8r1d"]
+
+[ext_resource type="FontFile" uid="uid://gnmo8njdss8x" path="res://assets/ui/upheaval/upheavtt.ttf" id="1_mbp0g"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1.472, 1.472, 1.472, 1)
+Label/colors/font_shadow_color = Color(0.26575458, 0.24355276, 0.22875157, 1)
+Label/constants/outline_size = 8
+Label/constants/shadow_offset_x = 12
+Label/font_sizes/font_size = 80
+Label/fonts/font = ExtResource("1_mbp0g")
