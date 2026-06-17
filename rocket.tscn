@@ -95,12 +95,12 @@ func apply_explosion_force():
 	var dir = player.global_position - global_position
 	var distance = dir.length()
 	
-	var max_distance = 75.0
+	var max_distance = 40.0
 	
 	if distance < max_distance:
 		var force = (max_distance - distance) / max_distance
 		
-		var impulse = dir.normalized() * force * 700
+		var impulse = dir.normalized() * force * 500
 		impulse.y -= 200
 		
 		if impulse.length() > 600:

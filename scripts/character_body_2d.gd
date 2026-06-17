@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 
 const ACCELERATION = 1200.0
 const FRICTION = 1500.0
-const AIR_CONTROL = 0.4
+const AIR_CONTROL = 0.5
 var use_life_system := false
 @export var rocket_scene: PackedScene
 
